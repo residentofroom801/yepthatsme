@@ -1,0 +1,110 @@
+Delivered-To: javadekarradhika@gmail.com
+Received: by 2002:a2e:6806:0:b0:2fa:f5ee:4403 with SMTP id c6csp1106459lja;
+        Sun, 3 Nov 2024 03:26:02 -0800 (PST)
+X-Received: by 2002:a05:690c:67ca:b0:6dd:d85a:15e3 with SMTP id 00721157ae682-6ea64c2db1emr96542717b3.37.1730633162070;
+        Sun, 03 Nov 2024 03:26:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1730633162; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Lqz+b2ZzinFun27NqatLrYNeYpC4AGOPg3Dh5rzK1RFyO/rkXiR5Mn4QefczpoSEgy
+         U/4ULbJKS1lw9pnq6ij4DS2CJQdpM2qSgosyIjp1ToVb3RJ31k70WIVWd9tDXXbUlGsO
+         lJRBJEB07TiAZ+ilRFf8QcAhJCU43FqA3B0GG676tndbAsrTcpTjBN6yDCvljNrZHE8w
+         xKJ5LCxYSzlsFDAqQJxb5YMzRhIszcd+/svh1lkYhvd6dJwjYVkBTWssWpNqVAXeMPLM
+         5OG7G7wSctONknCclLmIq+nl5DI2SS8D26Z+1Z+3lIPWZoKWBSQkfk0zSYxBWElqaS7W
+         M3LQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=c2rCLVQz4JEdGiGE1q3gaKqpelXbFWRJZ7+k2HkRe44=;
+        fh=4/fA9YDdyPZ0OBG6wzTPpOKxN+FqgydOcvpYG5PVUJQ=;
+        b=lPP7yfDTfPVZlnXrr/CwUYUQaif8uMThF288yS0TlgEAD9Gv00hwGUVV9AhunudXJt
+         0l6L8JoUnaAFxMuS2dzy+e+/vYjDz8RLgWTUEHifSAzpR+jQNeJVhuCU66WI1Nh6mtYX
+         nWRhI+CPzcaykvVd3Kql3H67JMeRNqrQaTnCpBIUywxXhIU1FIg5dAS2JWhZQP1DEQEN
+         BdvISf6EfWbUc+sl6LXgz2ZYZAI3I9QkvBxHsQQRSYHg8JJRu8G+0vBL3vbltEaNPWfl
+         tQ2pFlYPMPdFouQFUUKJPr+WOUQabhwrmtZqcbHbR2RlPUb7zIhEeYcezZ0+DzFO5+MT
+         /bLA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="YqbZ/jXg";
+       spf=pass (google.com: domain of vaishali.avani@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=vaishali.avani@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <vaishali.avani@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 00721157ae682-6ea55ac9b3bsor54609367b3.4.2024.11.03.03.26.01
+        for <javadekarradhika@gmail.com>
+        (Google Transport Security);
+        Sun, 03 Nov 2024 03:26:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of vaishali.avani@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="YqbZ/jXg";
+       spf=pass (google.com: domain of vaishali.avani@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=vaishali.avani@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1730633161; x=1731237961; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=c2rCLVQz4JEdGiGE1q3gaKqpelXbFWRJZ7+k2HkRe44=;
+        b=YqbZ/jXg8/F6HZZ85o3rWsKgRrLr42VoJVZIOwr4bjssfezpsxfU2l1v5KLHjRjVHH
+         lzrPT+l5AYY5GPZnUamqS8z/cVbRbdAI7tB+j3JC1f0v3Q5dlztmmOkfCuQjG1g1O+aO
+         pBtEzOdyueY2Nl9zE6kST9w47t0GDhjD0Gw7XnNA+qo+rqF6vudFg4ZoJuXMqnLKkA1M
+         O+CLmrrmYBdAGISZqWpsauzdkSnSwXQLeZTnI+Sqv+wyE+FTE2d9a7APN3MTamCd8OBH
+         qAS052ztRH++dsEqp9vn7TB81VuXRDoC33hQv1YmpoEjhcWaUbA/dfBPCk+buqIlaIJK
+         1yfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1730633161; x=1731237961;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=c2rCLVQz4JEdGiGE1q3gaKqpelXbFWRJZ7+k2HkRe44=;
+        b=TlKsTp8oUYNcahcbsk6A/SqY0nGByg1+rI/PqmZG7cPwwtXvaTskePR4pMr1t555N8
+         EKsyNmWc3DqhS/gQOWnbdNRudQfctbI+xmbLej8LnIFOdPXdRph7kC4w8bypzBC3EQi4
+         G4d4Bv+IY/x1m0Vv8Ev6KW8hEnn6+x257BZhScVK11jAgYN/VdfN5aa41jsy7asvtAoq
+         lRkKtbXmBFpVzzqiTQkDvR5dP6ijqakR68l9VqYTH9GCjjtrkIAc5tGQSbrzMYmlrsi2
+         +CqR9Gwfjz9Mpa6oWKoDJ+kEkx94GkRv2eNcNcM4UH1kZ1NxcT6Ax5b5jU8XPS4n04We
+         /X1g==
+X-Gm-Message-State: AOJu0YzwHGfmxvUcZOo/FQtVrsJawNluQDo/8DMiQKCHbEqhwDx36z4t
+	fBc248NSStMHvyj7aXCS6zSvjhL6D0FkB40twSLilzlj8eNHmYrDs9/coF/LgJ4J9zoIMKHFoBc
+	xHQSCIjGCH/LWanemcy/C9i9S1vdVLg==
+X-Google-Smtp-Source: AGHT+IHS5W8nWR/CbOKyuuCqIdD8jqGDIeIvMIMOZZQAuIE9w/VxkHTireiM8DYL8COAh9VOiJXrJFAdQK5mmeAjvc0=
+X-Received: by 2002:a05:690c:4513:b0:6db:deb7:d693 with SMTP id
+ 00721157ae682-6ea64b27585mr85624727b3.22.1730633161411; Sun, 03 Nov 2024
+ 03:26:01 -0800 (PST)
+MIME-Version: 1.0
+From: Vaishali Shiyekar <vaishali.avani@gmail.com>
+Date: Sun, 3 Nov 2024 16:55:51 +0530
+Message-ID: <CAFHkBnTyoUMqGM1Yw9Mmv+R_8ufD3oVP2U5m5ub9EOkjYFJ=XA@mail.gmail.com>
+Subject: index.html file
+To: javadekarradhika@gmail.com
+Content-Type: multipart/mixed; boundary="000000000000d2b0a90626006e01"
+
+--000000000000d2b0a90626006e01
+Content-Type: multipart/alternative; boundary="000000000000d2b0a70626006eff"
+
+--000000000000d2b0a70626006eff
+Content-Type: text/plain; charset="UTF-8"
+
+
+
+--000000000000d2b0a70626006eff
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><br></div>
+
+--000000000000d2b0a70626006eff--
+--000000000000d2b0a90626006e01
+Content-Type: text/html; charset="US-ASCII"; name="index.html"
+Content-Disposition: attachment; filename="index.html"
+Content-Transfer-Encoding: base64
+Content-ID: <f_m31iais40>
+X-Attachment-Id: f_m31iais40
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbCBsYW5nPSJlbiI+DQo8aGVhZD4NCiAgICA8bWV0YSBjaGFy
+c2V0PSJVVEYtOCI+DQogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRl
+dmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPg0KICAgIDx0aXRsZT5NeSBTaW1wbGUgV2Vi
+IFBhZ2U8L3RpdGxlPg0KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0ic3R5bGVzLmNz
+cyI+DQo8L2hlYWQ+DQo8Ym9keT4NCiAgICA8aGVhZGVyPg0KICAgICAgICA8aDE+V2VsY29tZSB0
+byBNeSBXZWIgUGFnZTwvaDE+DQogICAgPC9oZWFkZXI+DQogICAgPG1haW4+DQogICAgICAgIDxw
+PlRoaXMgaXMgYSBzaW1wbGUgd2ViIHBhZ2UgY3JlYXRlZCBhcyBhIHByYWN0aWNlLjwvcD4NCiAg
+ICAgICAgPHA+RmVlbCBmcmVlIHRvIGV4cGxvcmUhPC9wPg0KICAgIDwvbWFpbj4NCiAgICA8Zm9v
+dGVyPg0KICAgICAgICA8cD4mY29weTsgMjAyNCBNeSBTaW1wbGUgV2ViIFBhZ2U8L3A+DQogICAg
+PC9mb290ZXI+DQo8L2JvZHk+DQo8L2h0bWw+
+--000000000000d2b0a90626006e01--
